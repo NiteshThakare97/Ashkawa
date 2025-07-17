@@ -8,6 +8,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+/* Prevent horizontal scroll */
+
+body,
+html {
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
 }
@@ -358,7 +366,7 @@ section {
     letter-spacing: 1px;
     /* Added css  */
     animation: slideDown 1s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 1.2s;
     opacity: 0;
 }
 
@@ -368,7 +376,7 @@ section {
     margin: -26px 0px -14px;
     /* Added css  */
     animation: slideDown 1s ease forwards;
-    animation-delay: 3s;
+    animation-delay: 1.8s;
     opacity: 0;
 }
 
@@ -376,7 +384,7 @@ section {
     font-size: 1.9rem;
     /* Added css  */
     animation: slideDown 1s ease forwards;
-    animation-delay: 4s;
+    animation-delay: 1.8s;
     opacity: 0;
 }
 
@@ -390,7 +398,7 @@ section {
     top: 22%;
     /* Added css  */
     animation: slideInLeft 1s ease forwards;
-    animation-delay: 1s;
+    animation-delay: 0.4s;
     opacity: 0;
 }
 
@@ -711,6 +719,7 @@ video.bg-video {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: white;
+    letter-spacing: 2px;
 }
 
 svg {
@@ -725,14 +734,21 @@ svg text {
     stroke-width: 3px;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: draw 4s forwards ease-in-out;
+    animation: draw 4s ease-in-out infinite;
+    animation-delay: 1s;
     font-family: 'Arial Black', sans-serif;
     font-size: 13rem;
 }
 
 @keyframes draw {
-    to {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    50% {
         stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 1000;
     }
 }
 
@@ -831,7 +847,12 @@ svg text {
     border-right: 4px solid #f4b400;
     background-color: #f8f9fa;
     opacity: 1;
+    font-size: 18px;
     /* font-weight: bold; */
+}
+
+.tab-button.active img.icon {
+    width: 28px;
 }
 
 .tab-button img.icon {
@@ -878,6 +899,7 @@ svg text {
     background-image: url(./images/07/Section07BG.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 36px 0px;
 }
 
@@ -951,7 +973,8 @@ form button {
     border: none;
     padding: 16px;
     margin-top: 25px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .contact-us .col-md-6:nth-child(1) {
@@ -1010,6 +1033,13 @@ ul {
 
 .scroll-in-left {
     transform: translateX(-80px);
+}
+
+
+/* Slide from bottom */
+
+.scroll-in-up {
+    transform: translateY(180px);
 }
 
 
