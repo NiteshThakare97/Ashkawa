@@ -365,7 +365,7 @@ section {
     font-weight: 200;
     letter-spacing: 1px;
     /* Added css  */
-    animation: slideDown 1s ease forwards;
+    animation: flipIn 1s ease forwards;
     animation-delay: 1.2s;
     opacity: 0;
 }
@@ -375,7 +375,7 @@ section {
     font-weight: 700;
     margin: -26px 0px -14px;
     /* Added css  */
-    animation: slideDown 1s ease forwards;
+    animation: fadeInScale 1s ease forwards;
     animation-delay: 1.8s;
     opacity: 0;
 }
@@ -383,9 +383,45 @@ section {
 .mainbanner p {
     font-size: 1.9rem;
     /* Added css  */
-    animation: slideDown 1s ease forwards;
-    animation-delay: 1.8s;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 2.2s;
     opacity: 0;
+}
+
+
+/* Keyframes  */
+
+@keyframes fadeInScale {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes flipIn {
+    0% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 #mainbanner-left,
